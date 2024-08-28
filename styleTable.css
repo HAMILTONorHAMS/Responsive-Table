@@ -1,0 +1,188 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto,'Open Sans',sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container centralizado */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Tabela básica */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Impede quebra de texto */
+}
+
+thead {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botões estilizados */
+.btn-create, .btn-edit, .btn-show, .btn-delete {
+    display: inline;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.btn-create {
+    background-color: #28a745;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.btn-create:hover {
+    background-color: #218838;
+}
+
+.btn-edit {
+    background-color: #17a2b8;
+}
+
+.btn-edit:hover {
+    background-color: #138496;
+}
+
+.btn-show {
+    background-color: #007bff;
+}
+
+.btn-show:hover {
+    background-color: #0069d9;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Estilo Mobile-first: adaptado para telas pequenas */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        text-align: right;
+        position: relative;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-right: 10px;
+        text-align: left;
+    }
+
+    .btn-create {
+        width: 100%;
+    }
+
+    .btn-edit, .btn-show, .btn-delete {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Adaptar para tablets */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .btn-create {
+        width: auto;
+    }
+
+    .btn-edit, .btn-show, .btn-delete {
+        width: auto;
+    }
+}
+
+/* Estilo para telas grandes */
+@media (min-width: 1025px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+    th, td {
+        padding: 15px;
+    }
+    .btn-create {
+        width: auto;
+    }
+
+    .btn-edit, .btn-show, .btn-delete {
+        width: auto;
+    }
+}
